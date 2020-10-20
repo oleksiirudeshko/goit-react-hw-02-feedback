@@ -1,0 +1,32 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+div {
+  margin-left: 10px;
+}
+
+button {
+  background-color: white;
+  border-radius: 5px;
+  text-transform: uppercase;
+  margin: 10px 10px 20px 0;
+}
+
+button:active {
+  background-color: blue;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 30px;
+}
+li {
+  font-size: 22px;
+}
+p {
+  font-size: 22px;
+}
