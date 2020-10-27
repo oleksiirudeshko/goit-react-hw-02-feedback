@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 
-import Section from './Section';
-import FeedbackOptions from './Feedback/FeedbackOptions';
-import Statistics from './Statistics/Statistics';
-import Notification from './Notification';
+import Section from "./Section";
+import FeedbackOptions from "./Feedback/FeedbackOptions";
+import Statistics from "./Statistics/Statistics";
+import Notification from "./Notification";
 
 export default class App extends Component {
   state = {
@@ -14,7 +14,7 @@ export default class App extends Component {
 
   hendleFeedback = ({ target }) => {
     const field = target.textContent;
-    this.setState(prevState => {
+    this.setState((prevState) => {
       return {
         [field]: prevState[field] + 1,
       };
@@ -25,14 +25,11 @@ export default class App extends Component {
     const { good, neutral, bad } = this.state;
     const total = good + neutral + bad;
     const feedback = Math.round((good / total) * 100);
-    let IsShowNotification;
-    if (total === 0) {
-      IsShowNotification = true;
-    }
+    const IsShowNotification = total === 0;
 
     return (
       <div>
-        <Section title='Please leave feedback'>
+        <Section title="Please leave feedback">
           <FeedbackOptions onLeaveFeedback={this.hendleFeedback} />
         </Section>
 
@@ -46,7 +43,7 @@ export default class App extends Component {
               positivePercentage={feedback}
             />
           )}
-          {IsShowNotification && <Notification message='No feedback given' />}
+          {IsShowNotification && <Notification message="No feedback given" />}
         </Section>
       </div>
     );
